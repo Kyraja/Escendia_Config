@@ -1,0 +1,3 @@
+rootProject.name = 'Escendia_Config'
+include 'config'
+
