@@ -1,0 +1,3 @@
+name=TestName
+list=[["ListElement1","ListElement2"]]
+map={"key1root":{"key2m2":"keyvalue2m2","key1m2":"\u003d{keyvalue1m2}"}}

@@ -9,8 +9,15 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        name = 'sponge'
+        url = 'https://repo.spongepowered.org/maven'
+    }
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    runtime 'org.spongepowered:spongeforge:1.12.2-2705-7.1.0-BETA-3330'
+    compile 'org.spongepowered:spongeforge:1.12.2-2705-7.1.0-BETA-3330'
+
 }
