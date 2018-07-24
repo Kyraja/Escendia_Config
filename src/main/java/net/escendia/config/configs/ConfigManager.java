@@ -72,6 +72,7 @@ public class ConfigManager {
         if (obj.getClass().isAnnotationPresent(Config.class)) {
             try {
                 for (Field f : obj.getClass().getDeclaredFields()) {
+                    if (f.isAnnotationPresent(ConfigValue.class)) {
                         ConfigValue v = f.getAnnotation(ConfigValue.class);
                         String name = v.name().isEmpty() ? f.getName() : v.name();
                         String value = map.get(name);
@@ -84,6 +85,7 @@ public class ConfigManager {
                         }
                         if (!f.isAccessible()) f.setAccessible(true);
                         f.set(obj, TypeConverter.convertTo(value, f.getType()));
+                        }
                     }
 
             } catch (IllegalAccessException e) {
